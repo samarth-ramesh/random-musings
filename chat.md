@@ -1,16 +1,15 @@
-chat server:
-
-Features:
+# Chat Server
+## Features
 	1. Ephemeral messages. Messages are NOT stored server side, the server merely relays messages to clients
 	2. simple protocol
 	3. minimal access control (via storing users). To be implemented
 	4. tls based encryption. possibly TOFU. To be implemented
 
-Model:
-	Server:
-		socket // the server socket
-		clients // a list of clients, their file descriptors
-		message_queue // a queue of messages, a message contains 1. a tick no. (filled by server), 2. a message body., 3. a sender field (filled by server)
+## Model
+	### Server:
+		- socket // the server socket
+		- clients // a list of clients, their file descriptors
+		- message_queue // a queue of messages, a message contains 1. a tick no. (filled by server), 2. a message body., 3. a sender field (filled by server)
 				// 4. a timestamp (filled by client).
 
 A client sent message is defined as follows:
